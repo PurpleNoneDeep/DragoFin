@@ -1,0 +1,45 @@
+@media (min-width: 1201px) {
+    body {
+        font-size: 18px;
+    }
+    .container {
+        padding: 30px;
+    }
+}
+nav {
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+}
+nav a {
+    color: #639372;
+    padding: 1rem;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: #000000;
+}
+.container {
+    max-width: 1200px;
+    text-align: center; /* Центрирует текст */
+    margin: 20px; /* Отступы вокруг контейнера */
+    padding: 20px; /* Отступы внутри контейнера */
+    border-radius: 15px; /* Закругленные углы */
+    background-color: #131212; /* Цвет фона */
+    box-shadow: 0 0 15px rgba(4, 79, 32, 0.674); /* Размытое свечение */
+    position: relative; /* Для позиционирования псевдоэлемента */
+}
+.btn {
+    text-align: center;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: #131212;
+    color: #639372;
+    width: 10em;
+    height: 3em;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}

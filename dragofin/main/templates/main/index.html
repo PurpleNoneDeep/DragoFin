@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}ДракоФин{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'main/css/index.css' %}">{% endblock %}
+{% block content %}
+<header>
+        <div class="left">
+            <h1 class="text-gradient">ДракоФин</h1>
+        </div>
+        <div class="right">
+            <nav>
+                <a href="{% url 'home' %}">Главная</a>
+                <a href="#about">Об авторе</a>
+                <a href="#services">О приложении</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Добро пожаловать!</h1>
+            <p>Пожалуйста, войдите в свою учетную запись или зарегистрируйтесь.</p>
+            <div class="button-container">
+                <button class="btn" id="show-login">Войти в аккаунт</button>
+            </div>
+        </div>
+        <div>
+            <p>
+                Об авторе
+            </p>
+        </div>
+        <div>
+            О приложении (функции, особенности)
+        </div>
+    </main>
+{% endblock %}
