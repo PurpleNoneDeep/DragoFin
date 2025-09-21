@@ -12,20 +12,27 @@
             padding: 20px;
             text-align: center;
             text-decoration: none;
-            color: inherit;
+            color: #639372;
             transition: background-color 0.3s;
         }
 .card:hover {
-            background-color: #eaeaea;
+            background-color: #639372;
         }
+h1{
+    color: #639372;
+}
 h2 {
             margin: 0 0 10px;
             font-size: 1.5em;
-        }
+            color: #639372;
+}
 p {
             font-size: 1.2em;
-            color: #333;
-        }
+            color: #639372;
+}
+label{
+    color: #639372;
+}
 .transactions {
             margin-top: 20px;
             background-color: #131212;
@@ -47,9 +54,9 @@ p {
             text-align: center;
         }
 .dashboard-horizontal{
-    display: flex; /* Включаем Flexbox */
-    align-items: center; /* Выравниваем по центру по вертикали */
-    gap: 10px; /* Пробел между элементами */
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
 }
 button {

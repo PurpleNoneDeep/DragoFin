@@ -3,9 +3,9 @@
 {% block title %}Войти в аккаунт{% endblock %}
 {% block head %}<link rel="stylesheet" href="{% static 'main/css/auth.css' %}">{% endblock %}
 {% block content %}
-<header>
+<header class="auth-class">
 <div>
-    <button onclick="window.location.href='{% url 'home' %}'">Вернуться на главную</button>
+    <button class="back" onclick="window.location.href='{% url 'home' %}'">На главную</button>
 </div>
 </header>
 <main>

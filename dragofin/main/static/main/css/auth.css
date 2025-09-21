@@ -7,10 +7,15 @@ main{
     height: 100vh;
     margin: 0;
 }
+.auth-class{
+    margin: 0px;
+    padding: 0px;
+
+}
 .login-container {
     max-width: 1200px;
     text-align: center;
-    margin: 5px;
+    margin: 0px;
     padding: 60px;
     border-radius: 15px;
     background-color: #131212;
@@ -18,22 +23,23 @@ main{
     position: relative;
 }
 h2 {
+    color: #639372;
     text-align: center;
     margin-bottom: 20px;
 }
 input{
     background-color: #131212;
-    color: #639372; /* Зеленая надпись */
-    border: none; /* Убираем стандартные границы */
-    border-bottom: 2px solid green; /* Зеленая линия внизу */
-    padding: 10px; /* Отступы */
-    width: 100%; /* Ширина на 100% */
+    color: #639372;
+    border: none;
+    border-bottom: 2px solid green;
+    padding: 20px;
+    width: 100%;
     box-sizing: border-box;
 }
 
 button {
     text-align: center;
-    margin: 5px;
+    margin: 20px;
     border-radius: 15px;
     background-color: #131212;
     color: #639372;
