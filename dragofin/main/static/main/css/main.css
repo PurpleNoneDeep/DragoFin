@@ -51,3 +51,6 @@ nav a:hover {
     flex: 1;
     text-align: right;
 }
+input{
+    background-color: #131212;
+}

@@ -15,3 +15,15 @@ def income(request):
 
 def expences(request):
     return render(request, 'main/expences.html')
+
+def auth(request):
+    return render(request, 'main/authorization.html')
+
+def statistics(request):
+    return render(request, 'main/statistics.html')
+
+def addTransaction(request):
+    return render(request, 'main/addTransaction.html')
+
+def addCategory(request):
+    return render(request, 'main/addCategory.html')

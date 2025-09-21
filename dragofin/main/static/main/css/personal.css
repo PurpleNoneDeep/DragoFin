@@ -1,0 +1,63 @@
+.dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+.card {
+            background-color: #131212;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.3s;
+        }
+.card:hover {
+            background-color: #eaeaea;
+        }
+h2 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+        }
+p {
+            font-size: 1.2em;
+            color: #333;
+        }
+.transactions {
+            margin-top: 20px;
+            background-color: #131212;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+.transaction {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+.transaction:last-child {
+            border-bottom: none;
+        }
+.transaction div {
+            flex: 1;
+            text-align: center;
+        }
+.dashboard-horizontal{
+    display: flex; /* Включаем Flexbox */
+    align-items: center; /* Выравниваем по центру по вертикали */
+    gap: 10px; /* Пробел между элементами */
+
+}
+button {
+    text-align: center;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: #131212;
+    color: #639372;
+    width: 10em;
+    height: 3em;
+}

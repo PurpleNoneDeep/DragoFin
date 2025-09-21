@@ -1,1 +1,99 @@
 {% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Личный кабинет{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'main/css/personal.css' %}">{% endblock %}
+{% block content %}
+ <header>
+        <div class="left">
+            <h1 class="text-gradient">ДракоФин</h1>
+        </div>
+        <div class="right">
+            <nav>
+                <select onchange="location = this.value;">
+                <option value="">Профиль</option>
+                <option value="#home">Главная</option>
+                <option value="/logout/">Выход</option>
+                <option value="/settings/">Настройки</option>
+
+                 </select>
+            </nav>
+</div>
+    </header>
+<main>
+    <div class="dashboard-horizontal">
+            <div>
+                <h1>С возвращением, ИМЯ</h1>
+            </div>
+            <div>
+                <img src="" alt="Здесь будет картинка">
+            </div>
+        </div>
+        <div class="dashboard">
+            <a href="/" class="card">
+                <h2>Баланс (на дату)</h2>
+                <p>100,000 ₽</p>
+            </a>
+            <a href="/" class="card">
+                <h2>Доходы</h2>
+                <p>50,000 ₽</p>
+            </a>
+            <a href="/" class="card">
+                <h2>Расходы</h2>
+                <p>20,000 ₽</p>
+            </a>
+        </div>
+        <div class="dashboard-horizontal">
+            <div>
+                <h2>Фильтр по дате</h2>
+                <label for="start-date">Дата начала:</label>
+                <input type="date" id="start-date">
+
+                <label for="end-date">Дата конца:</label>
+                <input type="date" id="end-date">
+            </div>
+            <div>
+                <label for="dropdown">Укажите категорию:</label>
+                <select id="dropdown">
+                    <option value="option1">Опция 1</option>
+                    <option value="option2">Опция 2</option>
+                    <option value="option3">Опция 3</option>
+                </select>
+            </div>
+            <div>
+                <br>
+                <button type="button" onclick="filterResults()">Фильтровать</button>
+            </div>
+        </div>
+        <div class="transactions">
+            <h2>Список транзакций</h2>
+            <div class="transaction">
+                <div>01.08.2025</div>
+                <div>Доход</div>
+                <div>Зарплата</div>
+                <div>50,000 ₽</div>
+                <button type="button" onclick="filterResults()">Изменить</button>
+            </div>
+            <div class="transaction">
+                <div>02.08.2025</div>
+                <div>Расход</div>
+                <div>Продукты</div>
+                <div>5,000 ₽</div>
+                <button type="button" onclick="filterResults()">Изменить</button>
+            </div>
+            <div class="transaction">
+                <div>03.08.2025</div>
+                <div>Расход</div>
+                <div>Кафе</div>
+                <div>2,000 ₽</div>
+                <button type="button" onclick="filterResults()">Изменить</button>
+            </div>
+            <div class="transaction">
+                <div>04.08.2025</div>
+                <div>Доход</div>
+                <div>Дополнительный заработок</div>
+                <div>10,000 ₽</div>
+                <button type="button" onclick="filterResults()">Изменить</button>
+            </div>
+        </div>
+</main>
+{% endblock %}

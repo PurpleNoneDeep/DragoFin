@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Новая категория{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'main/css/auth.css' %}">{% endblock %}
+{% block content %}
+<header>
+<div>
+    <button onclick="window.location.href='{% url 'home' %}'">Вернуться на главную</button>
+</div>
+</header>
+<main>
+<div class="login-container">
+    <h2>Добавить транзакцию</h2>
+    <form action="{% url 'addcategory' %}" method="post">
+
+        <label for="category">Категория:</label>
+        <input id="category" name="category" placeholder="Название новой категории" required>
+
+        <label for="type">Тип:</label>
+        <select name="type" id="type" required>
+            <option value="">Выберите тип</option>
+            <option value="income">Доход</option>
+            <option value="expense">Расход</option>
+        </select>
+
+        <button type="submit">Добавить категорию</button>
+    </form>
+</div>
+</main>
+{% endblock %}

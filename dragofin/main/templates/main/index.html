@@ -21,7 +21,7 @@
             <h1>Добро пожаловать!</h1>
             <p>Пожалуйста, войдите в свою учетную запись или зарегистрируйтесь.</p>
             <div class="button-container">
-                <button class="btn" id="show-login">Войти в аккаунт</button>
+                <button class="btn" id="show-login" onclick="window.location.href='{% url 'auth' %}'">Войти в аккаунт</button>
             </div>
         </div>
         <div>

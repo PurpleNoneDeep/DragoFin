@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Войти в аккаунт{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'main/css/auth.css' %}">{% endblock %}
+{% block content %}
+<header>
+<div>
+    <button onclick="window.location.href='{% url 'home' %}'">Вернуться на главную</button>
+</div>
+</header>
+<main>
+<div class="login-container">
+    <h2>Авторизация</h2>
+    <form action="{% url 'auth' %}" method="post">
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="Почта" required>
+        <input type="password" name="password" placeholder="Пароль" required>
+        <button type="submit" onclick="window.location.href='{% url 'dashboard' %}'">Войти</button>
+    </form>
+</div>
+</main>
+{% endblock %}
