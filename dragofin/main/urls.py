@@ -11,5 +11,6 @@ urlpatterns = [
     path('auth', views.auth, name='auth'),
     path('stistics', views.statistics, name='statistics'),
     path('addtransaction', views.addTransaction, name='addtransaction'),
-    path('addcategory', views.addCategory, name='addcategory')
+    path('addcategory', views.addCategory, name='addcategory'),
+    path('calendar', views.Calendar, name='calendar')
 ]

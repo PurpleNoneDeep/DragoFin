@@ -31,3 +31,6 @@ def addTransaction(request):
 
 def addCategory(request):
     return render(request, 'main/addCategory.html')
+
+def Calendar(request):
+    return render(request, 'main/Calendar.html')
