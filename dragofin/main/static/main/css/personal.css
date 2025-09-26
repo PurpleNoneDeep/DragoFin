@@ -31,28 +31,28 @@ p {
             color: #639372;
 }
 label{
+    background-color: #131212;
     color: #639372;
 }
 .transactions {
-            margin-top: 20px;
-            background-color: #131212;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color:#639372;
         }
 .transaction {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #eaeaea;
-        }
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eaeaea;
+}
 .transaction:last-child {
-            border-bottom: none;
-        }
+    border-bottom: none;
+}
 .transaction div {
-            flex: 1;
-            text-align: center;
-        }
+    flex: 1;
+    text-align: center;
+}
 .dashboard-horizontal{
     display: flex;
     align-items: center;
@@ -67,4 +67,50 @@ button {
     color: #639372;
     width: 10em;
     height: 3em;
+}
+table {
+    border-collapse: collapse;
+    width: 80%;
+    color: #639372;
+}
+
+th, td {
+    border: 2px solid #639372;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #639372;
+    color: #131212;
+}
+
+tr:hover {
+    background-color: #131212;
+}
+select {
+    background-color: #131212;
+    color: #639372;
+    font-size: 16px;        /* Размер шрифта */
+    padding: 10px;          /* Внутренний отступ */
+    border: 1px solid #639372;  /* Зеленая рамка */
+    border-radius: 5px;     /* Скругление углов */
+    width: 200px;           /* Ширина */
+    height: 40px;           /* Высота */
+    appearance: none;       /* Убираем стандартный стиль */
+    cursor: pointer;        /* Указатель при наведении */
+    position: relative;      /* Для позиционирования псевдоэлемента */
+}
+select::after {
+    content: '▼';           /* Стрелка вниз */
+    color: #639372;          /* Зеленый цвет стрелки */
+    position: absolute;      /* Абсолютное позиционирование */
+    right: 10px;            /* Отступ от правого края */
+    top: 50%;               /* Центр по вертикали */
+    transform: translateY(-50%); /* Центрирование стрелки */
+    pointer-events: none;   /* Игнорировать события на стрелке */
+}
+input{
+    background-color: #131212;
+    color: #639372;
 }

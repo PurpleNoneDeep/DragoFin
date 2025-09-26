@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import User, Transaction
 
 # Create your views here.
 def index(request):
@@ -8,7 +9,10 @@ def about(request):
     return render(request, 'main/index.html')
 
 def dashboard(request):
-    return render(request, 'main/dashboard.html')
+    transactions = Transaction.objects.all()
+    users = User.objects.all()
+    user = users.first()
+    return render(request, 'main/dashboard.html', {'transactions': transactions, 'users': users, 'user': user})
 
 def income(request):
     return render(request, 'main/income.html')

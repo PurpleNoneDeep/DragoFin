@@ -22,7 +22,9 @@
 <main>
     <div class="dashboard-horizontal">
             <div>
-                <h1>С возвращением, ИМЯ</h1>
+                {% if user %}
+                <h1>С возвращением, {{ user.name }}</h1>
+                {% endif %}
             </div>
             <div>
                 <img src="" alt="Здесь будет картинка">
@@ -59,36 +61,33 @@
                 <button type="button" onclick="filterResults()">Фильтровать</button>
             </div>
         </div>
-        <div class="transactions">
-            <h2>Список транзакций</h2>
-            <div class="transaction">
-                <div>01.08.2025</div>
-                <div>Доход</div>
-                <div>Зарплата</div>
-                <div>50,000 ₽</div>
-                <button type="button" onclick="filterResults()">Изменить</button>
-            </div>
-            <div class="transaction">
-                <div>02.08.2025</div>
-                <div>Расход</div>
-                <div>Продукты</div>
-                <div>5,000 ₽</div>
-                <button type="button" onclick="filterResults()">Изменить</button>
-            </div>
-            <div class="transaction">
-                <div>03.08.2025</div>
-                <div>Расход</div>
-                <div>Кафе</div>
-                <div>2,000 ₽</div>
-                <button type="button" onclick="filterResults()">Изменить</button>
-            </div>
-            <div class="transaction">
-                <div>04.08.2025</div>
-                <div>Доход</div>
-                <div>Дополнительный заработок</div>
-                <div>10,000 ₽</div>
-                <button type="button" onclick="filterResults()">Изменить</button>
-            </div>
-        </div>
+    <div class="dashboard-horizontal">
+        <h2>Список транзакций</h2>
+        <button type="button" onclick="filterResults()">Добавить транзакцию</button>
+    </div>
+    <table>
+    <thead>
+        <tr>
+            <th>Дата</th>
+            <th>Категория</th>
+            <th>Сумма</th>
+            <th>Комментарий</th>
+        </tr>
+    </thead>
+    <tbody>
+     {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.date }}</td>
+            <td>{{ transaction.category }}</td>
+            <td>{{ transaction.amount }}</td>
+            <td>{{ transaction.comment }}</td>
+            <td><button type="button" onclick="filterResults()">Изменить</button></td>
+            <td><button type="button" onclick="filterResults()">Удалить</button></td>
+        </tr>
+    {% empty %}
+            <li>Нет транзакций за этот период.</li>
+    {% endfor %}
+    </tbody>
+</table>
 </main>
 {% endblock %}
