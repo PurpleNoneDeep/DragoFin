@@ -1,7 +1,8 @@
 body{
     background-color: #131212;
-    color: #333;
+    color: #639372;
     font-family: Arial, sans-serif;
+    flex-direction: column;
 }
 header {
     display: flex;
@@ -17,14 +18,14 @@ main{
     margin: 0;
     padding: 0;
     background-color: #131212;
-    color: #333;
+    color: #639372;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 footer {
     text-align: center;
-    padding: 1rem;
+    padding: 0px;
     background-color: #131212;
     color: #639372;
     position: relative;

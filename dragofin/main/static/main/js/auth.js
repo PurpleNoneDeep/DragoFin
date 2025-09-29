@@ -1,34 +1,3 @@
-{% extends 'main/layout.html' %}
-{% load static %}
-{% block title %}Войти в аккаунт{% endblock %}
-{% block head %}<link rel="stylesheet" href="{% static 'main/css/auth.css' %}">{% endblock %}
-{% block content %}
-<header class="auth-class">
-<div>
-    <button class="back" onclick="window.location.href='{% url 'home' %}'">На главную</button>
-</div>
-</header>
-<main>
-
-<div class="container" id="auth-container">
-    <div class="image-section" id="image-section">
-        <img src="your-image-url.jpg" alt="Описание изображения">
-    </div>
-    <div class="form-section" id="form-section">
-        <div class="form-container">
-            <h2>Вход в аккаунт</h2>
-            <form id="auth-form" method="post">
-                {% csrf_token %}
-                <input type="email" name="email" placeholder="Почта" required>
-                <input type="password" name="password" placeholder="Пароль" required>
-                <button type="submit" class="main-button">Войти в аккаунт</button>
-            </form>
-            <button type="button" class="secondary-button" onclick="toggleForm()">Нет аккаунта?</button>
-        </div>
-    </div>
-</div>
-
-<script>
 function toggleForm() {
     const imageSection = document.getElementById('image-section');
     const formSection = document.getElementById('form-section');
@@ -71,6 +40,3 @@ function toggleForm() {
 // Установим порядок по умолчанию
 document.getElementById('image-section').style.order = "0";
 document.getElementById('form-section').style.order = "1";
-</script>
-</main>
-{% endblock %}
