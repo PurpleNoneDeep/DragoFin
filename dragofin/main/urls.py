@@ -12,5 +12,7 @@ urlpatterns = [
     path('stistics', views.statistics, name='statistics'),
     path('addtransaction', views.addTransaction, name='addtransaction'),
     path('addcategory', views.addCategory, name='addcategory'),
-    path('calendar', views.Calendar, name='calendar')
+    path('calendar', views.Calendar, name='calendar'),
+    path('dashboard/delete/<int:transaction_id>/', views.delete_transaction, name='delete_transaction'),
+    path('dashboard/add/', views.add_transaction, name='add_transaction')
 ]
