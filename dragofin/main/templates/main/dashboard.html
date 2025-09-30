@@ -17,6 +17,10 @@
 
                  </select>
             </nav>
+            <form method="GET" action="{% url 'dashboard' %}" class="search-form">
+    <input type="text" name="category" placeholder="Поиск по категориям..." value="{{ query }}">
+    <button type="submit">Поиск</button>
+</form>
 </div>
     </header>
 <main>
@@ -52,18 +56,17 @@
 
                 <label for="end-date">по:</label>
                 <input type="date" id="end-date">
-                <label for="dropdown">Укажите категорию:</label>
+                <label for="dropdown">Укажите тип транзакции:</label>
                 <select id="dropdown">
-                    <option value="option1">Опция 1</option>
-                    <option value="option2">Опция 2</option>
-                    <option value="option3">Опция 3</option>
+                    <option value="option1">Доходы</option>
+                    <option value="option2">Расходы</option>
                 </select>
                 <button type="button" onclick="filterResults()">Фильтровать</button>
             </div>
         </div>
     <div class="dashboard-horizontal">
         <h2>Список транзакций</h2>
-        <button type="button" onclick="filterResults()">Добавить транзакцию</button>
+        <button type="button" onclick="window.location.href='{% url 'addcategory' %}'">Добавить транзакцию</button>
     </div>
     <table>
     <thead>

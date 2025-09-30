@@ -11,10 +11,13 @@ def about(request):
 
 def dashboard(request):
     print(request.user)
+    query = request.GET.get('category')
     transactions = Transaction.objects.all()
     users = User.objects.all()
     user = users.first()
-    return render(request, 'main/dashboard.html', {'transactions': transactions, 'users': users, 'user': user})
+    if query:
+        transactions = transactions.filter(category__name__icontains=query)
+    return render(request, 'main/dashboard.html', {'transactions': transactions, 'users': users, 'user': user, 'query': query})
 
 def income(request):
     return render(request, 'main/income.html')
