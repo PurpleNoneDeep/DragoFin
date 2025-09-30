@@ -17,9 +17,9 @@
     <div class="form-section" id="form-section">
         <div class="form-container">
             <h2>Вход в аккаунт</h2>
-            <form id="auth-form" method="post">
+            <form method="POST" action="{% url 'auth' %}">
                 {% csrf_token %}
-                <input type="email" name="email" placeholder="Почта" required>
+                <input type="text" name="username" placeholder="Почта" required>
                 <input type="password" name="password" placeholder="Пароль" required>
                 <button type="submit" class="main-button">Войти в аккаунт</button>
             </form>

@@ -29,7 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+LOGIN_REDIRECT_URL = 'home'  # Замените на вашу домашнюю страницу
+LOGOUT_REDIRECT_URL = 'auth'  # Замените на страницу входа
 # Application definition
 
 INSTALLED_APPS = [
