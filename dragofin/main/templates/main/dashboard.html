@@ -49,47 +49,69 @@
             </a>
         </div>
         <div class="dashboard-horizontal">
-            <div>
-                <label for="dropdown">Укажите тип транзакции:</label>
-                <select id="dropdown">
-                    <option value="option1">Доходы</option>
-                    <option value="option2">Расходы</option>
-                </select>
-                <button type="button" onclick="filterResults()">Фильтровать</button>
-            </div>
-        </div>
+    <div>
+        <label for="dropdown">Укажите тип транзакции:</label>
+        <select id="dropdown">
+            <option value="">Все</option>
+            <option value="income">Доходы</option>
+            <option value="expense">Расходы</option>
+        </select>
+        <button type="button" onclick="filterResults()">Фильтровать</button>
+    </div>
+</div>
     <div class="dashboard-horizontal">
         <h2>Список транзакций</h2>
         <button type="button" onclick="window.location.href='{% url 'addtransaction' %}'">Добавить транзакцию</button>
     </div>
-    <table>
+   <table>
     <thead>
         <tr>
             <th>Дата</th>
             <th>Категория</th>
             <th>Сумма</th>
             <th>Комментарий</th>
+            <th>Тип транзакции</th>
+            <th>Изменить</th>
+            <th>Удалить</th>
         </tr>
     </thead>
-    <tbody>
-     {% for transaction in transactions %}
-        <tr>
-            <td>{{ transaction.date }}</td>
-            <td>{{ transaction.category }}</td>
-            <td>{{ transaction.amount }}</td>
-            <td>{{ transaction.comment }}</td>
-            <td><button type="button" onclick="filterResults()">Изменить</button></td>
-            <td>
+    <tbody id="transaction-body">
+        {% for transaction in transactions %}
+            <tr data-type="{{ transaction.category.type }}">
+                <td>{{ transaction.date }}</td>
+                <td>{{ transaction.category }}</td>
+                <td>{{ transaction.amount }}</td>
+                <td>{{ transaction.comment }}</td>
+                <td>{{ transaction.category.type }}</td>
+                <td><button type="button" onclick="filterResults()">Изменить</button></td>
+                <td>
                     <form method="POST" action="{% url 'delete_transaction' transaction.transaction_id %}" style="display:inline;">
                         {% csrf_token %}
                         <button type="submit">Удалить</button>
                     </form>
-            </td>
-        </tr>
-    {% empty %}
-            <li>Нет транзакций за этот период.</li>
-    {% endfor %}
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="7">Нет транзакций за этот период.</td>
+            </tr>
+        {% endfor %}
     </tbody>
 </table>
+<script>
+    function filterResults() {
+        const dropdown = document.getElementById('dropdown');
+        const selectedType = dropdown.value;
+        const rows = document.querySelectorAll('#transaction-body tr');
+
+        rows.forEach(row => {
+            if (selectedType === "" || row.getAttribute('data-type') === selectedType) {
+                row.style.display = '';  // Показываем строку
+            } else {
+                row.style.display = 'none';  // Скрываем строку
+            }
+        });
+    }
+</script>
 </main>
 {% endblock %}
